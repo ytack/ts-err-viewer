@@ -9,13 +9,16 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "encoding-japanese": "^1.0.30",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
     "vuetify": "^2.4.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
+    "@types/encoding-japanese": "^1.0.17",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",

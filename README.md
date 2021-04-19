@@ -1,4 +1,9 @@
 # ts-err-viewer
+DTV 録画ソフトより出力された MPEG2-TS のログを簡単に閲覧するためのビューワ
+
+## 対応ファイル
+* EDCB (*.ts.err)
+* Multi2Dec (*_dec.ts)
 
 ## Project setup
 ```

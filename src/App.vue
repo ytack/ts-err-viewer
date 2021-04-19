@@ -1,61 +1,39 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer />
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <AppBar />
 
     <v-main>
-      <HelloWorld />
+      <div class="pa-6">
+        <TsErrViewer />
+      </div>
     </v-main>
+
+    <FullScreenFileDrop @drop="onDrop" />
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from 'vue-property-decorator';
+import store from '@/store';
+import AppBar from '@/components/AppBar.vue';
+import FullScreenFileDrop from '@/components/FullScreenFileDrop.vue';
+import TsErrViewer from '@/components/TsErrViewer.vue';
+import TsErrViewerConfig from './models/ts-err-viewer-config';
 
-export default Vue.extend({
-  name: 'App',
-
+@Component({
   components: {
-    HelloWorld,
+    AppBar,
+    FullScreenFileDrop,
+    TsErrViewer,
   },
+})
+export default class App extends Vue {
+  onDrop(files: File[]):void {
+    if ((store.getters.config as TsErrViewerConfig).isClearOnDrop) {
+      store.dispatch('removeAllTsErr');
+    }
 
-  data: () => ({
-    //
-  }),
-});
+    store.dispatch('addFiles', files);
+  }
+}
 </script>
