@@ -14,6 +14,7 @@ yarn install
 ```
 yarn serve
 ```
+and drag-and-drop error log file to the browser window.
 
 ### Compiles and minifies for production
 ```
