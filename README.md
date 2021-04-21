@@ -1,5 +1,5 @@
 # ts-err-viewer
-DTV 録画ソフトより出力された MPEG2-TS のログを簡単に閲覧するためのビューワ
+DTV 録画ソフトより出力された MPEG2-TS のログを簡易的に表示するビューワ
 
 ## 対応ファイル
 * EDCB (*.ts.err)
@@ -14,6 +14,7 @@ yarn install
 ```
 yarn serve
 ```
+and drag-and-drop error log file to the browser window.
 
 ### Compiles and minifies for production
 ```
