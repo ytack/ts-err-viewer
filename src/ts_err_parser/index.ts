@@ -1,5 +1,5 @@
 import { TsErrInfo } from '@/models/ts-err-info';
-import { TsErrParserUnsupportedFileError } from '@/models/ts-err-info-error';
+import TsErrParserUnsupportedFileError from '@/models/ts-err-parser-unsupported-file-error';
 import AbstractTsErrParser from './abstract-ts-err-parser';
 import EdcbErrParser from './edcb-err-parser';
 import Multi2DecTxtParser from './multi-2-dec-txt-parser';

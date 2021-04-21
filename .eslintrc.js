@@ -17,5 +17,6 @@ module.exports = {
 
     // TODO: *.vue ファイルのみに限定したい
     'class-methods-use-this': 'off',
+    'linebreak-style': 'off',
   },
 };

@@ -1,5 +1,5 @@
 import { TsErrInfo, TsErrPIDInfo } from '@/models/ts-err-info';
-import { TsErrParserNoPidError } from '@/models/ts-err-info-error';
+import TsErrParserUnsupportedFileError from '@/models/ts-err-parser-unsupported-file-error';
 import { codeToString, convert } from 'encoding-japanese';
 
 export default abstract class AbstractTsErrParser {
@@ -19,7 +19,7 @@ export default abstract class AbstractTsErrParser {
 
         const pids = this.parsePIDs(rawText);
         if (!pids.length) {
-          reject(new TsErrParserNoPidError())
+          reject(new TsErrParserUnsupportedFileError('could not detect any PID'));
         }
 
         const tsErrInfo = {

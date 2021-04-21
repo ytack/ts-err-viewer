@@ -4,7 +4,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 import fileToTsErr from '@/ts_err_parser';
-import { TsErrParserNoPidError, TsErrParserUnsupportedFileError } from '@/models/ts-err-info-error';
+import TsErrParserUnsupportedFileError from '@/models/ts-err-parser-unsupported-file-error';
 
 Vue.use(Vuex);
 
@@ -48,7 +48,7 @@ export default new Vuex.Store({
     },
     async addFiles({ commit }, srcFiles: File[]) {
       const parsePromisses = srcFiles.map((file) => fileToTsErr(file).catch((e) => {
-        if (!(e instanceof TsErrParserUnsupportedFileError || e instanceof TsErrParserNoPidError)) {
+        if (!(e instanceof TsErrParserUnsupportedFileError)) {
           throw e;
         }
       }));
