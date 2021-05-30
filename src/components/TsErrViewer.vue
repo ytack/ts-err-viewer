@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="tableItems.length">
     <v-data-table
       dense
       :headers="headers"
@@ -55,6 +55,14 @@
       </v-card>
     </v-dialog>
   </div>
+  <v-card v-else>
+    <v-card-title>
+      ログファイルがありません
+    </v-card-title>
+    <v-card-text>
+      ログファイルをこのページ上にドロップして追加してください
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts">
