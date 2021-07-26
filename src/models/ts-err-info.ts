@@ -1,3 +1,5 @@
+export type TsErrPIDInfoCountPropType = 'total' | 'drop' | 'scramble';
+
 export interface TsErrPIDInfo {
   pid: number;
   name: string | null;

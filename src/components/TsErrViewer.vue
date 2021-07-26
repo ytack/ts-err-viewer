@@ -68,12 +68,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import store from '@/store';
-import { TsErrInfo, TsErrPIDInfo } from '@/models/ts-err-info';
+import { TsErrPIDInfoCountPropType, TsErrInfo, TsErrPIDInfo } from '@/models/ts-err-info';
 import TsErrViewerConfig from '@/models/ts-err-viewer-config';
 
 interface TsErrViewerTableItem {
   fileName: string;
   rawText: string;
+  total: number;
   drop: number;
   scramble: number;
   filteredDrop: number;
@@ -91,6 +92,7 @@ export default class TsErrLogViewer extends Vue {
         text: 'File name',
         value: 'fileName',
       },
+      { text: 'Total', value: 'total', width: 110 },
       { text: 'Drop', value: 'drop', width: 110 },
       { text: 'Scramble', value: 'scramble', width: 110 },
       { text: 'PID filtered drop', value: 'filteredDrop', width: 110 },
@@ -119,12 +121,8 @@ export default class TsErrLogViewer extends Vue {
       store.dispatch('removeTsErr', tableItem.fileName);
     }
 
-    calcDrop(pids: TsErrPIDInfo[]): number {
-      return pids.reduce((acc, val) => acc + val.drop, 0);
-    }
-
-    calcScramble(pids: TsErrPIDInfo[]): number {
-      return pids.reduce((acc, val) => acc + val.scramble, 0);
+    calcPidInfoPropTotal(pids: TsErrPIDInfo[], countPropName: TsErrPIDInfoCountPropType): number {
+      return pids.reduce((acc, val) => acc + val[countPropName], 0);
     }
 
     filterPID(pids: TsErrPIDInfo[]): TsErrPIDInfo[] {
@@ -142,10 +140,11 @@ export default class TsErrLogViewer extends Vue {
         return {
           fileName: tsErr.fileName || '',
           rawText: tsErr.rawText,
-          drop: this.calcDrop(tsErr.pids),
-          scramble: this.calcScramble(tsErr.pids),
-          filteredDrop: this.calcDrop(filteredPIDs),
-          filteredScramble: this.calcScramble(filteredPIDs),
+          total: this.calcPidInfoPropTotal(tsErr.pids, 'total'),
+          drop: this.calcPidInfoPropTotal(tsErr.pids, 'drop'),
+          scramble: this.calcPidInfoPropTotal(tsErr.pids, 'scramble'),
+          filteredDrop: this.calcPidInfoPropTotal(filteredPIDs, 'drop'),
+          filteredScramble: this.calcPidInfoPropTotal(filteredPIDs, 'scramble'),
         } as TsErrViewerTableItem;
       });
     }
