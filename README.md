@@ -5,7 +5,7 @@ DTV 録画ソフトより出力された MPEG2-TS のログを簡易的に表示
 
 ## 対応ファイル
 * EDCB (*.ts.err)
-* Multi2Dec (*_dec.ts)
+* Multi2Dec (*_dec.txt)
 
 ## Project setup
 ```
