@@ -3,7 +3,7 @@ import AbstractTsErrParser from './abstract-ts-err-parser';
 
 export default class Multi2DecTxtParser extends AbstractTsErrParser {
   checkIsSupported(file: File): boolean {
-    const REGEX = /.*_dec\.txt/;
+    const REGEX = /.*_dec\.txt$/;
     return REGEX.test(file.name);
   }
 
