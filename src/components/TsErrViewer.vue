@@ -15,7 +15,7 @@
         <v-icon
           small
           class="mr-2"
-          @click="removeItem(item)"
+          @click.stop="removeItem(item)"
         >
           mdi-close
         </v-icon>
@@ -150,8 +150,7 @@ export default class TsErrLogViewer extends Vue {
     }
 
     get dialogTexts(): string[] {
-      const NEW_LINE_CODE = '\r\n';
-      return this.dialogTargetItem ? this.dialogTargetItem.rawText.split(NEW_LINE_CODE) : [];
+      return this.dialogTargetItem ? this.dialogTargetItem.rawText.replace(/\r/g, '').split('\n') : [];
     }
 }
 </script>

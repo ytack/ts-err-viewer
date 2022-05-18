@@ -3,8 +3,9 @@ import TsErrParserUnsupportedFileError from '@/models/ts-err-parser-unsupported-
 import AbstractTsErrParser from './abstract-ts-err-parser';
 import EdcbErrParser from './edcb-err-parser';
 import Multi2DecTxtParser from './multi-2-dec-txt-parser';
+import EpgStationDropLogParser from './epg-station-drop-log-parser';
 
-const PARSERS = [EdcbErrParser, Multi2DecTxtParser];
+const PARSERS = [EdcbErrParser, Multi2DecTxtParser, EpgStationDropLogParser];
 const parsers = PARSERS.map((Parser) => new Parser() as AbstractTsErrParser);
 
 // parse file to TsErrInfo
