@@ -1,9 +1,9 @@
-import { TsErrInfo } from '@/models/ts-err-info';
-import TsErrParserUnsupportedFileError from '@/models/ts-err-parser-unsupported-file-error';
-import AbstractTsErrParser from './abstract-ts-err-parser';
-import EdcbErrParser from './edcb-err-parser';
-import Multi2DecTxtParser from './multi-2-dec-txt-parser';
-import EpgStationDropLogParser from './epg-station-drop-log-parser';
+import { TsErrInfo } from '@/models/TsErrInfo';
+import TsErrParserUnsupportedFileError from '@/models/TsErrParserUnsupportedFileError';
+import AbstractTsErrParser from './AbstractTsErrParser';
+import EdcbErrParser from './EdcbErrParser';
+import Multi2DecTxtParser from './Multi2DecTxtParser';
+import EpgStationDropLogParser from './EpgStationDropLogParser';
 
 const PARSERS = [EdcbErrParser, Multi2DecTxtParser, EpgStationDropLogParser];
 const parsers = PARSERS.map((Parser) => new Parser() as AbstractTsErrParser);

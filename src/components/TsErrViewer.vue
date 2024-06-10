@@ -68,8 +68,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import store from '@/store';
-import { TsErrPIDInfoCountPropType, TsErrInfo, TsErrPIDInfo } from '@/models/ts-err-info';
-import TsErrViewerConfig from '@/models/ts-err-viewer-config';
+import { TsErrPIDInfoCountPropType, TsErrInfo, TsErrPIDInfo } from '@/models/TsErrInfo';
+import TsErrViewerConfig from '@/models/TsErrViewerConfig';
 
 interface TsErrViewerTableItem {
   fileName: string;

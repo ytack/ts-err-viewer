@@ -18,7 +18,7 @@ import store from '@/store';
 import AppBar from '@/components/AppBar.vue';
 import FullScreenFileDrop from '@/components/FullScreenFileDrop.vue';
 import TsErrViewer from '@/components/TsErrViewer.vue';
-import TsErrViewerConfig from './models/ts-err-viewer-config';
+import TsErrViewerConfig from './models/TsErrViewerConfig';
 
 @Component({
   components: {
