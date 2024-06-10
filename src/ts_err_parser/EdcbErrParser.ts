@@ -1,5 +1,5 @@
-import { TsErrPIDInfo } from '@/models/ts-err-info';
-import AbstractTsErrParser from './abstract-ts-err-parser';
+import { TsErrPIDInfo } from '@/models/TsErrInfo';
+import AbstractTsErrParser from './AbstractTsErrParser';
 
 export default class EdcbErrParser extends AbstractTsErrParser {
   checkIsSupported(file: File): boolean {

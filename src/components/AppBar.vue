@@ -30,7 +30,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import store from '@/store';
 import SettingsDialog from '@/components/SettingsDialog.vue';
-import TsErrViewerConfig from '@/models/ts-err-viewer-config';
+import TsErrViewerConfig from '@/models/TsErrViewerConfig';
 
 @Component({
   components: {

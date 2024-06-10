@@ -66,7 +66,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import store from '@/store';
-import TsErrViewerConfig from '@/models/ts-err-viewer-config';
+import TsErrViewerConfig from '@/models/TsErrViewerConfig';
 
 const PID_REGEXES = [/^0x([\dA-Fa-f]{4})$/, /^([\dA-Fa-f]{4})$/];
 
