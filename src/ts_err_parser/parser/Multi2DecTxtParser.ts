@@ -1,4 +1,4 @@
-import { TsErrPIDInfo } from '@/ts_err_parser/TsErrInfo';
+import { TsErrPidInfo } from '@/ts_err_parser/TsErrInfo';
 import AbstractTsErrParser from './AbstractTsErrParser';
 
 export default class Multi2DecTxtParser extends AbstractTsErrParser {
@@ -7,7 +7,7 @@ export default class Multi2DecTxtParser extends AbstractTsErrParser {
     return REGEX.test(file.name);
   }
 
-  parsePIDs(rawText: string): TsErrPIDInfo[] {
+  parsePIDs(rawText: string): TsErrPidInfo[] {
     const NEW_LINE_CODE = '\r\n';
     const TS_ERR_PID_REGEX = /^\[PID:0x([\dA-F]{4})\]Input:(\d+),Drop:(\d+),Scrambling:(\d+)$/;
     // [1]: PID(HEX)
@@ -24,7 +24,7 @@ export default class Multi2DecTxtParser extends AbstractTsErrParser {
 
         // 入らないはず
         if (!matches) {
-          return {} as TsErrPIDInfo;
+          return {} as TsErrPidInfo;
         }
 
         return {
@@ -33,7 +33,7 @@ export default class Multi2DecTxtParser extends AbstractTsErrParser {
           total: Number(matches[2]),
           drop: Number(matches[3]),
           scramble: Number(matches[4]),
-        } as TsErrPIDInfo;
+        } as TsErrPidInfo;
       });
   }
 }

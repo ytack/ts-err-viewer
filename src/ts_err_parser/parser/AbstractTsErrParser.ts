@@ -1,11 +1,11 @@
-import { TsErrInfo, TsErrPIDInfo } from '@/ts_err_parser/TsErrInfo';
+import { TsErrInfo, TsErrPidInfo } from '@/ts_err_parser/TsErrInfo';
 import TsErrParserUnsupportedFileError from '@/ts_err_parser/TsErrParserUnsupportedFileError';
 import { codeToString, convert } from 'encoding-japanese';
 
 export default abstract class AbstractTsErrParser {
   abstract checkIsSupported(file: File): boolean;
 
-  abstract parsePIDs(rawText: string): TsErrPIDInfo[];
+  abstract parsePIDs(rawText: string): TsErrPidInfo[];
 
   parseAsync(file: File): Promise<TsErrInfo | null> {
     return new Promise((resolve, reject) => {

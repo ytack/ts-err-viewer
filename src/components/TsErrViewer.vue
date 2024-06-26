@@ -68,7 +68,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import store from '@/store';
-import { TsErrPIDInfoCountPropType, TsErrInfo, TsErrPIDInfo } from '@/ts_err_parser/TsErrInfo';
+import { TsErrPidInfoCountPropType, TsErrInfo, TsErrPidInfo } from '@/ts_err_parser/TsErrInfo';
 import TsErrViewerConfig from '@/models/TsErrViewerConfig';
 
 interface TsErrViewerTableItem {
@@ -121,11 +121,11 @@ export default class TsErrLogViewer extends Vue {
       store.dispatch('removeTsErr', tableItem.fileName);
     }
 
-    calcPidInfoPropTotal(pids: TsErrPIDInfo[], countPropName: TsErrPIDInfoCountPropType): number {
+    calcPidInfoPropTotal(pids: TsErrPidInfo[], countPropName: TsErrPidInfoCountPropType): number {
       return pids.reduce((acc, val) => acc + val[countPropName], 0);
     }
 
-    filterPID(pids: TsErrPIDInfo[]): TsErrPIDInfo[] {
+    filterPID(pids: TsErrPidInfo[]): TsErrPidInfo[] {
       const config = store.getters.config as TsErrViewerConfig;
       return pids.filter((pid) => (
         !config.excludePIDsFromCount.includes(pid.pid)
