@@ -1,4 +1,4 @@
-import { TsErrPIDInfo } from '@/models/TsErrInfo';
+import { TsErrPIDInfo } from '@/ts_err_parser/TsErrInfo';
 import AbstractTsErrParser from './AbstractTsErrParser';
 
 export default class EdcbErrParser extends AbstractTsErrParser {

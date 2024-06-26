@@ -1,5 +1,5 @@
-import { TsErrInfo, TsErrPIDInfo } from '@/models/TsErrInfo';
-import TsErrParserUnsupportedFileError from '@/models/TsErrParserUnsupportedFileError';
+import { TsErrInfo, TsErrPIDInfo } from '@/ts_err_parser/TsErrInfo';
+import TsErrParserUnsupportedFileError from '@/ts_err_parser/TsErrParserUnsupportedFileError';
 import { codeToString, convert } from 'encoding-japanese';
 
 export default abstract class AbstractTsErrParser {
