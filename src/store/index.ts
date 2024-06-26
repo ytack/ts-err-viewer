@@ -1,4 +1,4 @@
-import { TsErrInfo } from '@/ts_err_parser/TsErrInfo';
+import TsErrInfo from '@/ts_err_parser/TsErrInfo';
 import TsErrViewerConfig from '@/models/TsErrViewerConfig';
 import Vue from 'vue';
 import Vuex from 'vuex';

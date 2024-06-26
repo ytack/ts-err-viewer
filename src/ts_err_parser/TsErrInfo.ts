@@ -6,7 +6,7 @@ export interface TsErrPidInfo {
   scramble: number;
 }
 
-export interface TsErrInfo {
+export default interface TsErrInfo {
   fileName: string;
   rawText: string;
   pids: TsErrPidInfo[];
