@@ -1,10 +1,10 @@
-import { TsErrInfo } from '@/models/TsErrInfo';
+import TsErrInfo from '@/ts_err_parser/TsErrInfo';
 import TsErrViewerConfig from '@/models/TsErrViewerConfig';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 import fileToTsErr from '@/ts_err_parser';
-import TsErrParserUnsupportedFileError from '@/models/TsErrParserUnsupportedFileError';
+import TsErrParserUnsupportedFileError from '@/ts_err_parser/TsErrParserUnsupportedFileError';
 
 Vue.use(Vuex);
 

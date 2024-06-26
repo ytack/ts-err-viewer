@@ -18,5 +18,9 @@ module.exports = {
     // TODO: *.vue ファイルのみに限定したい
     'class-methods-use-this': 'off',
     'linebreak-style': 'off',
+
+    // https://typescript-eslint.io/rules/semi/
+    "semi": "off",
+    "@typescript-eslint/semi": "error",
   },
 };
