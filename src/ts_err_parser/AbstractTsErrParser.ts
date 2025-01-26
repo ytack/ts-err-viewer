@@ -12,7 +12,7 @@ export default abstract class AbstractTsErrParser {
       const reader = new FileReader();
 
       reader.onloadend = (() => {
-        // EDCB の *.ts.err は Shift-JIS か UTF-8 で出力される
+        // EDCB の *.err は Shift-JIS か UTF-8 で出力される
         // encoding.js で一律 UTF-8 に変換する
         const unicodeArray = convert(new Uint8Array(reader.result as ArrayBuffer), 'UNICODE');
         const rawText = codeToString(unicodeArray);

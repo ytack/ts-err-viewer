@@ -3,7 +3,7 @@ import AbstractTsErrParser from './AbstractTsErrParser';
 
 export default class EdcbErrParser extends AbstractTsErrParser {
   checkIsSupported(file: File): boolean {
-    const REGEX = /.*\.ts.err$/;
+    const REGEX = /.*\.err$/;
     return REGEX.test(file.name);
   }
 
