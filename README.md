@@ -4,7 +4,7 @@ DTV 録画ソフトより出力された MPEG2-TS のログを簡易的に表示
 ![スクリーンショット](README_capture.png)
 
 ## 対応ファイル
-* EDCB: `*.ts.err`
+* EDCB: `*.ts.err` , `*.m2ts.err` など
 * Multi2Dec: `*_dec.txt`
 * EpgStation: `*.m2ts.log` , `*.m2ts(1).log` など
 
